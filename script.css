@@ -1,0 +1,54 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  #bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    image-rendering: pixelated; /* Keeps that retro look */
+    background-color: black; /* fallback if image fails */
+  }
+  
+  
+  header {
+    background: #222;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  nav a {
+    color: #61dafb;
+    margin: 0 15px;
+    text-decoration: none;
+  }
+  
+  section {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .project {
+    background: white;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 5px solid #61dafb;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #222;
+    color: #bbb;
+  }
+  
