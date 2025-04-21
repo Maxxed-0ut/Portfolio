@@ -20,7 +20,7 @@ document.querySelectorAll('nav a').forEach(link => {
   
   // Load your pixel art image
   const bgImage = new Image();
-  bgImage.src = 'assets/pixel-bg.png'; // <-- Replace with your image path
+  bgImage.src = 'pixilart-drawing.png'; // <-- Replace with your image path
   bgImage.onload = () => {
     // Tile the image to fill the canvas (you can change this if you want it centered or stretched)
     const pattern = ctx.createPattern(bgImage, 'repeat');
