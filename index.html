@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+  
+
+  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Full Background Image</title>
   <style>
-    /* Reset default margin and height */
+    
     * {
       margin: 0;
       padding: 0;
@@ -17,31 +20,32 @@
     }
 
     body {
-      background-image: url('pixilart-drawing.png'); /* Replace with your image path */
-      background-size: cover; /* Cover the entire background */
-      background-position: center;
+      background-image: url('pixilart-drawing.png'); 
+      
       background-repeat: repeat;
       background-position: top left;
       background-size: auto;
       align-items: center;
       justify-content: center;
-      color: white; /* Text color */
+      color: white;
       font-family: Arial, sans-serif;
       text-align: center;
     }
 
     .overlay {
-      background-color: rgba(0, 0, 0, 0.5); /* Optional: dark overlay */
-      padding: 2rem;
-      border-radius: 10px;
+      position: relative;
+      
+      width: 100%;
+      min-height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7); 
+      z-index: 1; 
+      color: white;
+      font-size: 2rem;
     }
   </style>
 </head>
 
-<script src="Portfolio.js">
 
-
-</script>
 <body>
   <div class="overlay">
     <canvas id="bgCanvas"></canvas>
@@ -56,35 +60,45 @@
       </nav>
     </header>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I build web applications with clean, scalable code and love learning new technologies. Currently exploring Next.js and AI integrations.</p>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>DevTracker</h3>
-        <p>A productivity app for developers to track tasks and daily logs. Built with React & Firebase.</p>
-        <a href="https://github.com/yourusername/devtracker" target="_blank">View on GitHub</a>
+    <div class="tabs">
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="about">About</button>
+        <button class="tab-btn" data-tab="projects">Projects</button>
+        <button class="tab-btn" data-tab="contact">Contact</button>
       </div>
-      <div class="project">
-        <h3>CodeSnippet Hub</h3>
-        <p>A web app to save and share code snippets. Uses Node.js and MongoDB.</p>
-        <a href="https://github.com/yourusername/codesnippethub" target="_blank">View on GitHub</a>
+    
+      <div class="tab-content active" id="about">
+        <h2>About Me</h2>
+        <p>I build web applications with clean, scalable code and love learning new technologies. Currently exploring Next.js and AI integrations.</p>
       </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: jane.doe@example.com</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/janedoe" target="_blank">janedoe</a></p>
-    </section>
+    
+      <div class="tab-content" id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+          <h3>DevTracker</h3>
+          <p>A productivity app for developers to track tasks and daily logs. Built with React & Firebase.</p>
+          <a href="https://github.com/yourusername/devtracker" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project">
+          <h3>CodeSnippet Hub</h3>
+          <p>A web app to save and share code snippets. Uses Node.js and MongoDB.</p>
+          <a href="https://github.com/yourusername/codesnippethub" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+    
+      <div class="tab-content" id="contact">
+        <h2>Contact</h2>
+        <p>Email: jane.doe@example.com</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/janedoe" target="_blank">janedoe</a></p>
+      </div>
+    </div>
+    
 
     <footer>
       <p>© 2025 Jane Doe. All rights reserved.</p>
     </footer>
 
-  </div> 
+  </div>
+  <script src="Portfolio.js"></script> 
 </body>
 </html>
