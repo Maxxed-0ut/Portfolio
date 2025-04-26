@@ -2,11 +2,13 @@
 <html lang="en">
   
 
-  
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Full Background Image</title>
+  <link rel="stylesheet" href="script.css">
+
   <style>
     
     * {
@@ -47,8 +49,9 @@
 
 
 <body>
+  <canvas id="bgCanvas"></canvas>
   <div class="overlay">
-    <canvas id="bgCanvas"></canvas>
+    
     
     <header>
       <h1>Welcome</h1>
@@ -60,8 +63,10 @@
       </nav>
     </header>
 
-    <div class="tabs">
+    
+      
       <div class="tab-buttons">
+
         <button class="tab-btn active" data-tab="about">About</button>
         <button class="tab-btn" data-tab="projects">Projects</button>
         <button class="tab-btn" data-tab="contact">Contact</button>
@@ -91,7 +96,6 @@
         <p>Email: jane.doe@example.com</p>
         <p>LinkedIn: <a href="https://linkedin.com/in/janedoe" target="_blank">janedoe</a></p>
       </div>
-    </div>
     
 
     <footer>

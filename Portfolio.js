@@ -23,28 +23,53 @@ document.addEventListener ('DOMContentLoaded', () => {
         targetContent.classList.add('active');
       }
     });
-  });
-
-    const canvas = document.getElementById('bgCanvas');
-    const ctx = canvas.getContext('2d');
-    
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    
-    // Load your pixel art image
-    const bgImage = new Image();
-    bgImage.src = 'pixilart-drawing.png'; // <-- Replace with your image path
-    bgImage.onload = () => {
-      // Tile the image to fill the canvas (you can change this if you want it centered or stretched)
-      const pattern = ctx.createPattern(bgImage, 'repeat');
-      ctx.imageSmoothingEnabled = false;
-      ctx.fillStyle = pattern;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-    }
+  }) 
 })
+document.addEventListener('DOMContentLoaded', () => {
+  const canvas = document.getElementById('bgCanvas');
+  const ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  // EXAMPLE: simple animated particles
+  const particles = Array.from({ length: 50 }, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 2 + 1,
+    speedX: Math.random() * 0.5 - 0.25,
+    speedY: Math.random() * 0.5 - 0.25,
+  }));
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = 'rgb(221, 255, 0)';
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Move particles
+      p.x += p.speedX;
+      p.y += p.speedY;
+
+      // Wrap around edges
+      if (p.x < 0) p.x = canvas.width;
+      if (p.x > canvas.width) p.x = 0;
+      if (p.y < 0) p.y = canvas.height;
+      if (p.y > canvas.height) p.y = 0;
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+});
+
     
